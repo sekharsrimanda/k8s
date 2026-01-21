@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  creationTimestamp: "2026-01-21T04:55:08Z"
+  labels:
+    kubernetes.io/metadata.name: pe-lab
+  name: pe-lab
+  resourceVersion: "3227"
+  uid: ea761b51-94d6-4cbb-9c46-16633641dff9
+spec:
+  finalizers:
+  - kubernetes
+status:
+  phase: Active
