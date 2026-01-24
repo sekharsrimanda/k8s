@@ -140,4 +140,42 @@ Daily notes must follow this exact structure (no format change):
 - Dockerfile best practices
 - Container debugging
 - Git: branching, PR flow, tags, release basics
-- GitHub Actions: CI p
+- GitHub Actions: CI pipeline basics
+- Revision + mini CI project
+
+---
+
+## Month 4 — GitOps + Kubernetes Packaging
+- Helm (charts, values, templating)
+- Kustomize (patching, overlays)
+- ArgoCD (sync, rollback, app-of-apps basics)
+- Deployment strategies (blue/green, canary)
+- Environments (dev/stage/prod)
+- Revision + GitOps mini project
+
+---
+
+## Month 5 — Cloud + Terraform + Observability
+- AWS fundamentals (IAM, VPC, EC2, EKS basics)
+- Terraform (providers, state, modules, remote state)
+- Monitoring: Prometheus + Grafana basics
+- Logging: EFK/Loki basics
+- Alerting basics + SLO/SLA concepts
+- Final capstone project + mock interviews
+
+---
+
+# Daily Output Checklist (Everyday)
+- Notes updated in GitHub (README + Interview.md)
+- YAML/commands saved
+- Break & Fix done
+- Revision completed
+
+---
+
+## Final Target
+By end of 5 months:
+- Strong Kubernetes + troubleshooting skills
+- GitOps + CI/CD understanding
+- Terraform + AWS basics
+- Interview-ready definitions + Q&A bank
