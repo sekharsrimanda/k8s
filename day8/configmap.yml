@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+  namespace: pe-day8
+data:
+  APP_ENV: "dev"
+  APP_OWNER: "platform-team"
