@@ -1,5 +1,5 @@
 1️⃣ One‑Page Notes: Kubernetes Probes
-What are Probes?
+#What are Probes?
 
 In Kubernetes, probes are health checks used by the kubelet to understand:
 
