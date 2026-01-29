@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stress-app
+  namespace: day9
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stress-app
+  template:
+    metadata:
+      labels:
+        app: stress-app
+    spec:
+      containers:
+      - name: stress
+        image: polinux/stress
+        args:
+          - "--vm"
+          - "1"
+          - "--vm-bytes"
+          - "200M"
+          - "--vm-hang"
+          - "1"
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "50Mi"
+          limits:
+            cpu: "200m"
+            memory: "100Mi"
+
