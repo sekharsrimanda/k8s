@@ -51,3 +51,34 @@ Metrics Server is a cluster-wide aggregator that collects **CPU and memory usage
 
 ## CPU Utilization Formula (Exam Favorite)
 
+
+Example:
+- CPU request: 100m
+- Actual usage: 80m
+- Utilization: 80%
+
+If target = 50% → HPA scales up
+
+---
+
+## Why CPU Requests Are Required
+- HPA calculates percentages, not raw CPU
+- No CPU request = no baseline
+- Result: HPA fails silently
+
+---
+
+## HPA Evaluation Behavior
+- Metrics are sampled every ~15 seconds
+- Scaling decisions require sustained load
+- HPA is intentionally **slow to react**
+- Prevents unstable scaling (flapping)
+
+---
+
+## Metrics Server Installation (Killer Coda)
+
+```bash
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+
+
