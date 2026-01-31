@@ -1,9 +1,3 @@
-
----
-
-## 📄 `Interview.md`
-
-```md
 # Day 12 — HPA Interview Q&A
 
 Q1) What is HPA?
