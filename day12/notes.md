@@ -82,3 +82,48 @@ If target = 50% → HPA scales up
 kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
 
 
+🔍 Verify HPA
+kubectl -n pe-day12-hpa get hpa
+kubectl -n pe-day12-hpa get pods
+
+🔥 Generate Load (MANDATORY)
+kubectl -n pe-day12-hpa run load \
+  --image=busybox \
+  --restart=Never -- \
+  sh -c "while true; do wget -q -O- http://hpa-svc; done"
+
+📈 Watch Autoscaling
+kubectl -n pe-day12-hpa get hpa -w
+kubectl -n pe-day12-hpa get pods -w
+
+
+Expected:
+
+CPU ↑
+
+Pods scale from 1 → 2 → 3
+
+💥 Break & Fix (MANDATORY)
+❌ Break
+
+Remove CPU requests from deployment
+
+Re-apply
+
+Observe HPA error
+
+✅ Fix
+
+Add CPU requests back
+
+Re-apply
+
+HPA resumes scaling
+
+🐞 Debug Commands
+kubectl describe hpa -n pe-day12-hpa
+kubectl top pods -n pe-day12-hpa
+kubectl top nodes
+kubectl describe deployment hpa-app -n pe-day12-hpa
+
+
