@@ -1,6 +1,6 @@
 1‑Page Learning Notes 
 
-## Goal of PodDisruptionBudgets
+# Goal of PodDisruptionBudgets
 
 Ensure application availability during voluntary disruptions such as:
 
@@ -97,33 +97,37 @@ kubectl get events
 
 ## 5 Interview Q&A
 
-Q1: What problem does a PodDisruptionBudget solve?
+## Q1: What problem does a PodDisruptionBudget solve?
+
 A: It prevents too many Pods from being evicted at the same time during voluntary disruptions.
 
-Q2: Do PDBs protect against node crashes?
+## Q2: Do PDBs protect against node crashes?
+
 A: No. They only apply to voluntary disruptions.
 
-Q3: What happens if a PDB is violated during drain?
+## Q3: What happens if a PDB is violated during drain?
+
 A: The eviction request is rejected and the drain operation blocks.
 
-Q4: minAvailable vs maxUnavailable — when to use which?
+## Q4: minAvailable vs maxUnavailable — when to use which?
 A:
 
 minAvailable for strict availability guarantees
 
 maxUnavailable for flexible scaling environments
 
-Q5: Why can PDBs break cluster upgrades?
+## Q5: Why can PDBs break cluster upgrades?
+
 A: If replicas are too low, Kubernetes cannot evict Pods while respecting the budget.
 
-Learning Resources (MANDATORY)
+## Learning Resources (MANDATORY)
 📘 Official Documentation
 
 https://kubernetes.io/docs/tasks/run-application/configure-pdb/
 
 https://kubernetes.io/docs/concepts/workloads/pods/disruptions/
 
-🎥 Direct Video Links
+## 🎥 Direct Video Links
 
 Kubernetes PodDisruptionBudget explained (TechWorld with Nana):
 https://www.youtube.com/watch?v=H5V9R3o5hJ0
