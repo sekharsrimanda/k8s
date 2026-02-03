@@ -1,5 +1,6 @@
-1‑Page Learning Notes
-##Goal of PodDisruptionBudgets
+1‑Page Learning Notes 
+
+## Goal of PodDisruptionBudgets
 
 Ensure application availability during voluntary disruptions such as:
 
@@ -11,33 +12,33 @@ Autoscaler scale‑downs
 
 Manual pod evictions
 
-PDBs protect workloads from being over‑disrupted at the same time.
+# PDBs protect workloads from being over‑disrupted at the same time.
 
-Definition
+## Definition
 
 A PodDisruptionBudget (PDB) is a Kubernetes policy object that limits how many Pods of a workload can be voluntarily evicted simultaneously.
 
 PDBs do not prevent failures — they only control voluntary disruptions.
 
-What PDB Controls (Very Important)
+## What PDB Controls (Very Important)
 
-✅ Voluntary disruptions (drain, eviction API)
+- ✅ Voluntary disruptions (drain, eviction API)
 
-❌ Involuntary disruptions (node crash, OOMKill, kernel panic)
+- ❌ Involuntary disruptions (node crash, OOMKill, kernel panic)
 
-How PDB Works (Conceptual Flow)
+## How PDB Works (Conceptual Flow)
 
 You define a PDB using a label selector
 
 Kubernetes calculates how many Pods are allowed to be unavailable
 
-When an eviction is requested:
+## When an eviction is requested:
 
 If budget allows → eviction succeeds
 
 If budget violated → eviction is blocked
 
-PDB Configuration Models
+## PDB Configuration Models
 1️⃣ minAvailable
 
 Guarantees a minimum number of Pods must stay running
@@ -57,7 +58,7 @@ maxUnavailable: 1
 
 ⚠️ You must use only one of the two.
 
-Why Platform Engineers Care
+##  Why Platform Engineers Care
 
 Safe node upgrades
 
@@ -71,7 +72,7 @@ Critical Platform Insight (Interview Gold)
 
 If every workload has replicas: 1 and a strict PDB → cluster upgrades will fail.
 
-PDBs must align with:
+## PDBs must align with:
 
 Replica count
 
@@ -87,14 +88,14 @@ Common Misconceptions
 
 ✅ “PDB limits simultaneous evictions” → Yes
 
-5 Key Commands
+## 5 Key Commands
 kubectl get pdb
 kubectl describe pdb <pdb-name>
 kubectl get pods -l app=<label>
 kubectl drain <node-name> --ignore-daemonsets
 kubectl get events
 
-5 Interview Q&A
+## 5 Interview Q&A
 
 Q1: What problem does a PodDisruptionBudget solve?
 A: It prevents too many Pods from being evicted at the same time during voluntary disruptions.
