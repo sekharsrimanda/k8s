@@ -12,7 +12,7 @@ Autoscaler scale‑downs
 
 Manual pod evictions
 
-# PDBs protect workloads from being over‑disrupted at the same time.
+PDBs protect workloads from being over‑disrupted at the same time.
 
 ## Definition
 
