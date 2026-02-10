@@ -1,0 +1,13 @@
+# frontend-pod.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: frontend
+  namespace: frontend
+  labels:
+    app: frontend
+spec:
+  containers:
+  - name: curl
+    image: curlimages/curl:8.6.0
+    command: ["sleep","3600"]
